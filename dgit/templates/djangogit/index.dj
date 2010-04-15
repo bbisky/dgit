@@ -1,0 +1,5 @@
+<ol>
+{% for repo in repositories %}
+    <li>{{repo.path}}  - {{repo.description}}  - {{repo.lastchange}}</li>
+{%endfor %}
+</ol>

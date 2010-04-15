@@ -1,0 +1,7 @@
+{%load gitfilters%}
+<h1>commits:</h1>
+<ol>
+{%for commit in commits%}
+<li>{{commit.sha}} - {{commit.message}}-{{commit.authored_date|timestampsince}}</li>
+{%endfor%}
+</ol>

@@ -68,8 +68,9 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'apps.djangogit',
 )
 
 #settings for djangogit
 # git repository root folder path
-GIT_REPOSITORY_ROOT = 'E:\projects\python'
+GIT_REPOSITORY_ROOT = 'D:\\'

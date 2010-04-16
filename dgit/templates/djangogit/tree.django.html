@@ -1,0 +1,14 @@
+{%load gitfilters%}
+<h1>tree:{{tree.sha}}</h1>
+tree: {{tree.path}}
+<ul>
+{%for t in tree.trees%}
+    <li><a href="{%url tree repo_path=repo_path sha=commit.sha from_path=t.path%}">[{{t.name}}]</a></li>
+{%endfor%}
+
+{%for b in tree.blobs%}
+    <li><a href="{%url tree repo_path=repo_path sha=commit.sha from_path=b.path%}">{{b.name}}</a></li>
+{%endfor%}
+
+
+</ul>

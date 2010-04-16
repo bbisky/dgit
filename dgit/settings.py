@@ -34,12 +34,12 @@ MEDIA_ROOT = path.join(path.dirname(__file__),'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/media'
+MEDIA_URL = '/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/admin_media/'
 STATIC_PATH = './media'
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '3o@$dyy7s_2wu1k5nwy&znt3r$_1f!z8d=i)uwfmd8^0(5(b6d'
@@ -73,4 +73,4 @@ INSTALLED_APPS = (
 
 #settings for djangogit
 # git repository root folder path
-GIT_REPOSITORY_ROOT = 'D:\\'
+GIT_REPOSITORY_ROOT = 'E:\\Temp\\'

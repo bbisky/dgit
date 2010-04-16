@@ -2,6 +2,6 @@
 <h1>commits:</h1>
 <ol>
 {%for commit in commits%}
-<li>{{commit.sha}} - {{commit.message}}-{{commit.authored_date|timestampsince}}</li>
+<li><a href="{%url commit repo_path=repo_path sha=commit.sha%}">{{commit.sha}}</a> - {{commit.message}}-{{commit.authored_date|timestampsince}}</li>
 {%endfor%}
 </ol>

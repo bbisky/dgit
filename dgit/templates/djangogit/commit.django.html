@@ -1,0 +1,9 @@
+{%load gitfilters%}
+<h1>commits:</h1>
+author:{{commit.author}}<br/>
+{{commit.authored_date|localtime}}<br/>
+
+committer:{{commit.committer}}<br/>
+{{commit.committed_date|localtime}}
+
+tree: <a href="{%url tree repo_path=repo_path sha=commit.sha%}">{{commit.tree}}</a>

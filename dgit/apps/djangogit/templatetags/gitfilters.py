@@ -1,4 +1,5 @@
 #coding=utf-8
+from os import path
 from datetime import datetime
 
 from django import template
@@ -16,3 +17,29 @@ def timestampsince(value):
         return u''
     
 register.filter(timestampsince)
+
+def localtime(value): 
+    return datetime.fromtimestamp(value)   
+    
+
+register.filter(localtime)
+
+
+def brush(value):
+    """
+    filetype to SyntaxHighlighter brush
+    """
+    name,ext = path.splitext(value)
+    ext = ext.lower()
+    result = {
+        '.txt':  "plain",
+        '.py':   "python", 
+        '.cs':   "csharp",      
+        #TODO: add all file type  
+    }
+    if result.has_key(ext):
+        return result[ext]
+    else:
+        return "plain"
+    
+register.filter(brush)

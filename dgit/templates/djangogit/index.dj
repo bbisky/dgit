@@ -1,5 +1,0 @@
-<ol>
-{% for repo in repositories %}
-    <li><a href="{{repo.path}}/.git">{{repo.path}}</a>  - {{repo.description}}  - {{repo.last_change}}</li>
-{%endfor %}
-</ol>

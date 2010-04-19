@@ -19,8 +19,7 @@ def timestampsince(value):
 register.filter(timestampsince)
 
 def localtime(value): 
-    return datetime.fromtimestamp(value)   
-    
+    return datetime.fromtimestamp(value)     
 
 register.filter(localtime)
 
@@ -32,9 +31,20 @@ def brush(value):
     name,ext = path.splitext(value)
     ext = ext.lower()
     result = {
+        '.cs':   "csharp",
+        '.css': "css",
+        '.html': "html",
+        '.js':  "jscript",
+        '.php':   "php",
+        '.py':   "python",        
         '.txt':  "plain",
-        '.py':   "python", 
-        '.cs':   "csharp",      
+        '.aspx': "xml",
+        '.ascx': "xml",
+        '.xml':  "xml",
+        '.xhtml': "xml",
+        '.xslt':     "xml",
+        '.html': "xml",
+        '.csproj': "xml",
         #TODO: add all file type  
     }
     if result.has_key(ext):
@@ -43,3 +53,8 @@ def brush(value):
         return "plain"
     
 register.filter(brush)
+
+#def data(value):
+#    print isinstance(value,unicode)
+#    return unicode(value,'gb2312')
+#register.filter(data)

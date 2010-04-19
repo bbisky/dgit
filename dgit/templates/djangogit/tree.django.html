@@ -7,7 +7,7 @@ tree: {{tree.path}}
 {%endfor%}
 
 {%for b in tree.blobs%}
-    <li><a href="{%url tree repo_path=repo_path sha=commit.sha from_path=b.path%}">{{b.name}}</a></li>
+    <li><a href="{%url blob repo_path=repo_path sha=commit.sha from_path=b.path%}">{{b.name}}</a></li>
 {%endfor%}
 
 

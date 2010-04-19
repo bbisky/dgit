@@ -1,18 +1,37 @@
 {%load gitfilters%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head> 
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+		<title>{{blob.name}}</title> 
+ 
+{%ifequal filetype "text" %}
 <script type="text/javascript" src="{{MEDIA_URL}}scripts/shCore.js"></script>
 <script type="text/javascript" src="{{MEDIA_URL}}scripts/shBrush{{blob.name|brush}}.js"></script>
 <link type="text/css" rel="stylesheet" href="{{MEDIA_URL}}styles/shCore.css"/>
-	<link type="text/css" rel="stylesheet" href="{{MEDIA_URL}}styles/shThemeEclipse.css"/>
+<link type="text/css" rel="stylesheet" href="{{MEDIA_URL}}styles/shThemeEclipse.css"/>
 
 <script language="javascript">
     SyntaxHighlighter.config.clipboardSwf = '{{MEDIA_URL}}scripts/clipboard.swf';
     SyntaxHighlighter.all();    
 </script>
-{%load gitfilters%}
+{%endifequal%}
+	</head>
+	<body>
 <h1>blob:{{blob.name}}</h1>
 blob: {{blob.path}}<br/>
 type: {{blob.mime_type}}<br/>
-
+size: {{blob.size|filesizeformat }}<br/>
+{%ifequal filetype "text" %}
 <pre class="brush:{{blob.name|brush}}">
 {{blob.data}}
 </pre>
+{%else%}
+    {%ifequal filetype "image" %}
+    <img src="{%url blob_raw repo_path=repo_path sha=commit.sha from_path=blob.path%}" alt="{{blob.name}}" />
+    {%else%}
+    It's a binary file.
+    {%endifequal%}
+{%endifequal%}
+	</body>
+</html>

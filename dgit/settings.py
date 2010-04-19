@@ -73,4 +73,4 @@ INSTALLED_APPS = (
 
 #settings for djangogit
 # git repository root folder path
-GIT_REPOSITORY_ROOT = 'E:\\Temp\\'
+GIT_REPOSITORY_ROOT = 'E:\\projects\\VSProject\\'

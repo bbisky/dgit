@@ -6,4 +6,5 @@ author:{{commit.author}}<br/>
 committer:{{commit.committer}}<br/>
 {{commit.committed_date|localtime}}
 
-tree: <a href="{%url tree repo_path=repo_path sha=commit.sha%}">{{commit.tree}}</a>
+tree: <a href="{%url tree repo_path=repo_path sha=commit.sha%}">{{commit.tree}}</a><br/>
+diff:<a href="{%url commit_diff repo_path=repo_path sha=commit.sha%}">DIFF</a>
